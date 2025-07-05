@@ -1,0 +1,1 @@
+{"uuid":"383400e6-7a50-46dd-9169-d57232158ec7","name":"Scenario: Prevent book deletion with insufficient permissions","children":["869f78b1-6252-4422-8624-0d6a69954828"],"befores":[],"afters":[],"start":1751732368667,"stop":1751732368683}

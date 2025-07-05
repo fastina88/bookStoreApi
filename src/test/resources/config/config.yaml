@@ -1,0 +1,50 @@
+environment: QA
+
+DEV:
+  bookstore:
+    baseUrl: https://dev-bookstore.example.com
+    createBook: /books
+    getAllBooks: /getbooks
+    getBookById: /getbook/
+    updateBookId: /updatebook/
+    deleteBook: /deletebook/
+  user:
+    baseUrl: https://dev-user.example.com
+    health: /health
+    registerUser: /users/signup
+    loginUser: /users/login
+    loginWithCookie: /users/login-with-cookie
+    deleteUser: /users/
+
+
+QA:
+  bookstore:
+    baseUrl: https://qa-bookstore.example.com
+    createBook: /books
+    getAllBooks: /getbooks
+    getBookById: /getbook/
+    updateBookId: /updatebook/
+    deleteBook: /deletebook/
+  user:
+    baseUrl: https://qa-user.example.com
+    health: /health
+    registerUser: /users/signup
+    loginUser: /users/login
+    loginWithCookie: /users/login-with-cookie
+    deleteUser: /users/
+
+SBX:
+  bookstore:
+    baseUrl: https://sbx-bookstore.example.com
+    createBook: /books
+    getAllBooks: /getbooks
+    getBookById: /getbook/
+    updateBookId: /updatebook/
+    deleteBook: /deletebook/
+  user:
+    baseUrl: https://sbx-user.example.com
+    health: /health
+    registerUser: /users/signup
+    loginUser: /users/login
+    loginWithCookie: /users/login-with-cookie
+    deleteUser: /users/
