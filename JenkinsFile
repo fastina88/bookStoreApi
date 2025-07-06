@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven 3.6.3'
+        allure 'Allure'
+    }
+
+    environment {
+        RECIPIENTS = 'your_email@example.com'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/fastina88/bookStoreApi.git', branch: 'main'
+            }
+        }
+
+        stage('Build and Test') {
+            steps {
+                bat 'mvn clean test'
+            }
+        }
+
+        stage('Generate Allure Report') {
+            steps {
+                bat 'mvn allure:report'
+            }
+        }
+    }
+
+    post {
+        always {
+            allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'Allure-Report/allure-results']]
+            ])
+
+
+            emailext (
+                subject: "Jenkins Pipeline: ${currentBuild.fullDisplayName} - ${currentBuild.currentResult}",
+                body: """<p>Build ${currentBuild.fullDisplayName} finished with status: ${currentBuild.currentResult}</p>
+                         <p>Check console output: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
+                to: "${RECIPIENTS}",
+                mimeType: 'text/html'
+            )
+        }
+    }
+}
