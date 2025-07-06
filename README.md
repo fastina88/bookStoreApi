@@ -44,13 +44,13 @@ The framework is built on BDD (Behavior-Driven Development) using Cucumber and R
 
 * **Comprehensive API Coverage:** End-to-end testing of User Management and Book Management services including full CRUD operations.
 * **Positive & Negative Testing:** Validation of expected behavior for valid scenarios and appropriate error handling for invalid inputs, unauthorized access, and conflict scenarios.
-* **Request Chaining:** Seamless flow where outputs (such as tokens, user IDs, or cookies) from one step serve as inputs for subsequent operations—mirroring real user journeys.
-* **Environment-Driven Configuration:** Flexible setup using a central YAML configuration file to support multiple environments (DEV, QA, SBX, PROD) without code changes.
-* **Behavior-Driven Development (BDD):** Tests written in Gherkin syntax with Cucumber for better collaboration, readability, and business alignment.
-* **Allure Reporting:** Rich, interactive reports generated automatically post-execution for actionable insights into test results and coverage.
-* **Logging & Debugging:** SLF4J-based structured logging provides clear, real-time feedback on test execution and API interactions.
-* **CI/CD Ready:** Fully integrated with Jenkins pipelines (or easily adaptable to other tools like GitHub Actions) for continuous integration, automated test execution, and reporting.
-* **Reusable Utility Design**: Shared utilities for common operations such as authentication, environment management, and request handling ensure maintainability and scalability.
+* **Request Chaining:** Seamless flow where outputs from one-step serve as inputs for subsequent operations.
+* **Environment-Driven Configuration:** YAML configuration file to support multiple environments.
+* **Behavior-Driven Development (BDD):** Tests written in Gherkin syntax with Cucumber.
+* **Allure Reporting:** Easy and clear reports generated after test execution.
+* **Logging & Debugging:** Implemented logger for better debugging purpose.
+* **CI/CD Ready:** Integrated with Jenkins pipelines for continuous integration, automated test execution, and reporting.
+* **Reusable Utility Design**: Shared utilities for common operations to ensure maintainability and scalability.
 
 ### Setup & Configuration
  
@@ -84,3 +84,8 @@ Clone the Repository
 * Cucumber Reports: Cucumber also produces an HTML report in target/cucumber-html-report.html for BDD test overview.
 
 ### CI/CD Pipeline (Jenkins)
+The Jenkinsfile includes:
+
+* Code checkout from Git
+* Maven build and test execution
+* Allure report 

@@ -15,6 +15,9 @@ public class commonUtilMethods {
         return firstDigit + String.valueOf(remainingDigits);
     }
 
+    /**
+     * Utility method to include assertions by passing response and the value to be asserted.
+     */
     public static void assertMessageEquals(Response response, String expectedSubstring, String key) {
         String actualMessage = response.jsonPath().getString(key);
 

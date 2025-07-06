@@ -14,6 +14,10 @@ public class AuthUtils {
     private AuthUtils() {
     }
 
+    /**
+     * Utility method to check if the service context has a token saved .
+     * If no token present, login and get the token again.
+     */
     public static Object ensureToken(ScenarioContext context) {
         if (context.getAuthToken() == null || context.getAuthToken().isEmpty()) {
             logger.warn("Auth token is missing. Logging in to generate new token...");
